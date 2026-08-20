@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, Phone, MessageCircle, Copy, Check, MapPin, Clock, Sparkles } from 'lucide-react';
-import { brandConfig } from '../config/brand.config';
+import { X, Phone, MessageCircle, MessageSquare, Copy, Check, MapPin, Clock, Sparkles } from 'lucide-react';
+import { brandConfig, getSmsUrl } from '../config/brand.config';
 import { cityConfig } from '../config/city.config';
 
 interface ReservationModalProps {
@@ -165,7 +165,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
               className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-md transition-colors text-center"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>전화로 예약 ({brandConfig.phoneDisplay})</span>
+              <span>전화 예약</span>
             </a>
 
             <a
@@ -175,14 +175,22 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
               className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#FEE500] hover:bg-[#FDD835] text-[#381F1F] text-xs font-bold shadow-xs transition-colors text-center"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-[#381F1F]" />
-              <span>카톡으로 문의</span>
+              <span>카톡 문의</span>
             </a>
           </div>
+
+          <a
+            href={getSmsUrl(cityConfig.keyword)}
+            className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl border border-rose-200 bg-rose-50/80 hover:bg-rose-100/90 text-xs font-bold text-slate-800 transition-colors"
+          >
+            <MessageSquare className="w-3.5 h-3.5 text-rose-600" />
+            <span>문자로 간편예약</span>
+          </a>
 
           <button
             type="button"
             onClick={handleCopyMessage}
-            className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
+            className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
           >
             {copied ? (
               <>

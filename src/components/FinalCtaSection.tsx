@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, MessageCircle, Clock, ShieldCheck, Sparkles } from 'lucide-react';
-import { brandConfig } from '../config/brand.config';
+import { Phone, MessageCircle, MessageSquare, Clock, ShieldCheck, Sparkles } from 'lucide-react';
+import { brandConfig, getSmsUrl } from '../config/brand.config';
 import { cityConfig } from '../config/city.config';
 import { CherryIcon } from './icons/CherryIcon';
 
@@ -36,16 +36,26 @@ export const FinalCtaSection: React.FC = () => {
             {cityConfig.finalCtaSubhead}
           </p>
 
-          {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-md mx-auto mb-8">
+          {/* Triple CTAs: Phone, SMS, Kakao */}
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 max-w-2xl mx-auto mb-8">
             {/* Phone Button */}
             <a
               id="final-cta-phone-btn"
               href={brandConfig.phoneTel}
-              className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-lg shadow-rose-600/30 transition-all active:scale-[0.98]"
+              className="w-full sm:w-auto flex-1 min-w-[200px] inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-lg shadow-rose-600/30 transition-all active:scale-[0.98]"
             >
-              <Phone className="w-4 h-4 text-white" />
+              <Phone className="w-4 h-4 text-white shrink-0" />
               <span>전화 예약 ({brandConfig.phoneDisplay})</span>
+            </a>
+
+            {/* SMS Button */}
+            <a
+              id="final-cta-sms-btn"
+              href={getSmsUrl(cityConfig.keyword)}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 border border-white/20 shadow-md transition-all active:scale-[0.98]"
+            >
+              <MessageSquare className="w-4 h-4 text-rose-400 shrink-0" />
+              <span>문자로 간편예약</span>
             </a>
 
             {/* Kakao Button */}
@@ -54,9 +64,9 @@ export const FinalCtaSection: React.FC = () => {
               href={brandConfig.kakaoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl text-sm font-bold text-[#381F1F] bg-[#FEE500] hover:bg-[#FDD835] shadow-md transition-all active:scale-[0.98]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl text-sm font-bold text-[#381F1F] bg-[#FEE500] hover:bg-[#FDD835] shadow-md transition-all active:scale-[0.98]"
             >
-              <MessageCircle className="w-4 h-4 fill-[#381F1F]" />
+              <MessageCircle className="w-4 h-4 fill-[#381F1F] shrink-0" />
               <span>카카오톡 문의</span>
             </a>
           </div>

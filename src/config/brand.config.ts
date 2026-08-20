@@ -10,9 +10,19 @@ export const brandConfig: BrandConfig = {
   brand: '체리홈타이',
   phoneDisplay: '0503-6984-9892',
   phoneTel: 'tel:050369849892',
+  smsNumber: '050369849892',
   kakaoUrl: 'https://open.kakao.com/o/s3zuwACi',
   operatingHours: '24시간 365일 연중무휴',
   paymentMethod: '100% 현장 안심 후불제 (선입금 일절 없음)',
   establishedTagline: '신뢰와 품격의 프리미엄 방문 홈케어 테라피',
   qualityPromise: '엄격한 위생 수칙 준수 & 체계적인 테라피스트 케어'
+};
+
+/**
+ * 지역 키워드 기반 SMS 간편예약 링크 생성기 (마스터 템플릿 자동화 지원)
+ * 예: "평택출장마사지 예약문의드립니다."
+ */
+export const getSmsUrl = (keyword: string, number: string = brandConfig.smsNumber): string => {
+  const smsMessage = `${keyword} 예약문의드립니다.`;
+  return `sms:${number}?body=${encodeURIComponent(smsMessage)}`;
 };

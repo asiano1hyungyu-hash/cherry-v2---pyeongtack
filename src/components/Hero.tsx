@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, MessageCircle, ArrowRight, ShieldCheck, Clock, MapPin, Sparkles } from 'lucide-react';
-import { brandConfig } from '../config/brand.config';
+import { Phone, MessageCircle, MessageSquare, ArrowRight, ShieldCheck, Clock, MapPin, Sparkles } from 'lucide-react';
+import { brandConfig, getSmsUrl } from '../config/brand.config';
 import { cityConfig } from '../config/city.config';
 
 interface HeroProps {
@@ -79,16 +79,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservationModal }) => {
             {/* CTA Buttons Row - High Contrast, Accessible & Mobile Optimized */}
             <div 
               id="hero-cta-group"
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl"
+              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full max-w-xl"
             >
               {/* Phone CTA */}
               <a
                 id="hero-phone-cta"
                 href={brandConfig.phoneTel}
-                className="flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-md shadow-rose-600/20 hover:shadow-lg transition-all active:scale-[0.98]"
+                className="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-md shadow-rose-600/20 hover:shadow-lg transition-all active:scale-[0.98]"
               >
-                <Phone className="w-4 h-4 text-white" />
+                <Phone className="w-4 h-4 text-white shrink-0" />
                 <span>전화 예약 ({brandConfig.phoneDisplay})</span>
+              </a>
+
+              {/* SMS CTA */}
+              <a
+                id="hero-sms-cta"
+                href={getSmsUrl(cityConfig.keyword)}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-slate-800 bg-white hover:bg-slate-50 border border-stone-300 shadow-xs hover:border-slate-400 transition-all active:scale-[0.98]"
+              >
+                <MessageSquare className="w-4 h-4 text-rose-600 shrink-0" />
+                <span>문자로 간편예약</span>
               </a>
 
               {/* Kakao CTA */}
@@ -97,20 +107,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservationModal }) => {
                 href={brandConfig.kakaoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-[#381F1F] bg-[#FEE500] hover:bg-[#FDD835] shadow-sm transition-all active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-[#381F1F] bg-[#FEE500] hover:bg-[#FDD835] shadow-xs transition-all active:scale-[0.98]"
               >
-                <MessageCircle className="w-4 h-4 fill-[#381F1F]" />
+                <MessageCircle className="w-4 h-4 fill-[#381F1F] shrink-0" />
                 <span>카톡 문의</span>
-              </a>
-
-              {/* Programs Link CTA */}
-              <a
-                id="hero-view-programs-cta"
-                href="#programs"
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl text-sm font-semibold text-slate-700 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors"
-              >
-                <span>프로그램 보기</span>
-                <ArrowRight className="w-4 h-4 text-slate-400" />
               </a>
             </div>
 

@@ -2,6 +2,7 @@ export interface BrandConfig {
   brand: string;
   phoneDisplay: string;
   phoneTel: string;
+  smsNumber: string;
   kakaoUrl: string;
   operatingHours: string;
   paymentMethod: string;

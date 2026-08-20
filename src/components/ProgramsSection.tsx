@@ -1,7 +1,7 @@
 import React from 'react';
-import { Sparkles, Check, Phone, MessageCircle, Clock, ShieldCheck, Flame, Heart, Crown } from 'lucide-react';
+import { Sparkles, Check, Phone, MessageCircle, MessageSquare, Clock, ShieldCheck, Flame, Heart, Crown } from 'lucide-react';
 import { cityConfig } from '../config/city.config';
-import { brandConfig } from '../config/brand.config';
+import { brandConfig, getSmsUrl } from '../config/brand.config';
 
 export const ProgramsSection: React.FC = () => {
   const getProgramIcon = (type: string) => {
@@ -226,6 +226,15 @@ export const ProgramsSection: React.FC = () => {
                       <span>카톡 문의</span>
                     </a>
                   </div>
+
+                  <a
+                    href={getSmsUrl(cityConfig.keyword)}
+                    className="w-full flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl text-xs font-bold text-slate-800 bg-rose-50/80 hover:bg-rose-100/90 border border-rose-200/80 transition-colors"
+                    title="문자로 간편예약"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-rose-600" />
+                    <span>문자로 간편예약</span>
+                  </a>
                 </div>
 
               </div>
