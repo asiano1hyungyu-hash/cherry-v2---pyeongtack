@@ -1,0 +1,6 @@
+{
+  "name": "평택출장마사지 | 체리홈타이 V2",
+  "description": "체리홈타이 평택출장마사지 V2 마스터 템플릿 - 평택 전지역 24시간 후불제 전문 방문 홈케어 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
