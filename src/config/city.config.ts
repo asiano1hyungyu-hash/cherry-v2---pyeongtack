@@ -11,12 +11,12 @@ export const cityConfig: CityConfig = {
   cityKo: '평택',
   cityEn: 'Pyeongtaek',
   keyword: '평택출장마사지',
-  domain: 'https://cherry-pyeongtaek.example.com',
+  domain: 'https://ptack.yongincherry.workers.dev/',
   heroBadge: 'PYEONGTAEK · 24H HOME CARE',
   heroHeadline: '평택출장마사지 체리홈타이',
   heroSubhead: '고덕국제신도시부터 비전동, 동삭동, 송탄, 안중까지 평택 전지역 어디서나 나만의 프라이빗한 공간에서 전문 홈케어 테라피를 편안하게 경험해보세요.',
-  heroImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop',
-  ogImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop',
+  heroImage: 'https://ptack.yongincherry.workers.dev/cherrymain.png',
+  ogImage: 'https://ptack.yongincherry.workers.dev/cherrymain.png',
   serviceDescription: '체리홈타이 평택점은 바쁜 일상과 업무로 누적된 피로를 익숙하고 안락한 공간에서 풀 수 있도록 돕는 24시간 전문 방문 케어 서비스입니다.',
   
   // Quick Info Bar Data

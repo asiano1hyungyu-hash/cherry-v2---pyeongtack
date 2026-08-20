@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ptack.yongincherry.workers.dev/sitemap.xml

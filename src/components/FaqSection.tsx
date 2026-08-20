@@ -69,15 +69,13 @@ export const FaqSection: React.FC = () => {
                   </div>
                 </button>
 
-                {/* Accordion Body */}
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/40">
-                    <div className="flex items-start gap-2.5 pt-2">
-                      <span className="shrink-0 text-xs font-bold text-slate-400 mt-0.5">답변</span>
-                      <p>{faq.answer}</p>
-                    </div>
+                {/* Accordion Body - Always rendered in DOM for static prerendering, toggled via CSS */}
+                <div className={`px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/40 ${isOpen ? 'block' : 'hidden'}`}>
+                  <div className="flex items-start gap-2.5 pt-2">
+                    <span className="shrink-0 text-xs font-bold text-slate-400 mt-0.5">답변</span>
+                    <p>{faq.answer}</p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

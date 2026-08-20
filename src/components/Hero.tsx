@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenReservationModal }) => {
               <div className="relative aspect-[4/3] sm:aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
                 <img
                   src={cityConfig.heroImage}
-                  alt={`${cityConfig.keyword} ${brandConfig.brand} 전문 방문 홈케어 테라피 환경`}
+                  alt="평택출장마사지 체리홈타이 방문 마사지 서비스"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="eager"
                 />
